@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -22,11 +22,36 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <header>
+            <h1>cards <a href="#">[+]</a></h1>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, voluptatibus, non veritatis sequi provident culpa deserunt cumque eum autem quisquam quibusdam numquam cupiditate sint omnis inventore velit error nostrum ad!</p>
+        </header>
+
+        <div id="cardNavArrows">
+            <span id="upArrow">Up</span>/<span id="downArrow">Down</span>
+        </div>
+
+        <span id="toggleCardList">
+            <span class="notactive">menu</span>
+            <span class="active">close</span>
+        </span>
+
+        <div id="cardListContainer">
+            <ul id="cardList">
+                
+            </ul><!-- cardlist-->
+        </div><!-- cardListContainer -->
+
+        <ul id="mainContent">
+            
+        </ul><!-- mainContent -->
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
+        <script src="js/cardsContent.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -6,6 +6,25 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
+@font-face {
+    font-family:'AkzidenzGroteskBELight';
+    src:url(../fonts/monofont-webfont.eot);
+    src:local(â˜º),url(../fonts/monofont-webfont.woff) format("woff"),
+        url(../fonts/monofont-webfont.ttf) format("truetype"),
+        url(../fonts/monofont-webfont.svg#webfontR8RG5gjV) format("svg");
+    font-weight:400;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'ClarendonBT-Light';
+    src:url(../fonts/clarendon.eot);
+    src:local(â˜º),url(../fonts/clarendon.woff) format("woff"),url(../fonts/clarendon.ttf) format("truetype");
+    font-weight:400;
+    font-style:normal;
+}
+
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -93,21 +112,215 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body {
+    font-family: 'AkzidenzGroteskBELight', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 25px;
+    color: #707070;
+  
+
+}
+
+.orange { 
+    color: #fc7f2f;
+}
+.lightblue {
+    color: #82c7e4;
+}
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+    line-height: 1em;
+
+    max-width: 50em;
+
+}
+
+h1 {
+    font-size: 3em;
+    max-width: 17em;
+    
+
+    margin: 0 1.25em .625em;
+    color: #0093d0;
+}
+
+h1.leadoff {
+    margin-top: 0;
+}
+
+h2 {
+    color: #0093d0;
+
+    font-size: 2em;
+
+
+    margin: 0 0 1em;
+}
+
+p { 
+    font-size: 1em;
+    line-height: 1.5em;
+    
+
+    
+}
+
+small {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin: 4em 4em 0;
+
+    color: #0093d0;
+
+    display: block;
+}
+body div {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+header {
+    padding: .5em 1em; 
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    height: 2em;
+
+    background-color: #fff;
+    border-bottom: 1px solid #0093d0;
+
+    z-index: 101;
+
+    -webkit-transition: height 350ms ;
+    -moz-transition: height 350ms ;
+    -ms-transition: height 350ms ;
+    -o-transition: height 350ms ;
+    transition: height 350ms ;
+}
+header.active {
+    height: 100%;
+
+}
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header p {
+    display: none;
+
+    max-width: 20em;
+}
+
+header a {
+    font-size: .5em;
+    color: #0093d0;
+    text-decoration: none;
+}
+header.active p {
+    display: block;
+}
+
+#toggleCardList {
+    display: none;
+}
+#cardNavArrows {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+
+    border-left: 1px solid #0093d0;
+    border-top: 1px solid #0093d0;
+
+    background-color: #fff;
+    
+    padding: .5em;
+}
+
+#upArrow, #downArrow {
+    color: #0093d0;
+    cursor: pointer;
+}
+#cardList, #mainContent {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#cardListContainer {
+    position: fixed;
+
+    top: 3em;
+    left: 0;
+    bottom: 0;
+    
+    width: 15em;
+
+    background-color: #fff;
 
 
 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    z-index: 9;
+}
+
+#cardList {
+
+}
+#cardList .cardSelectItem {
+    padding: 1em 0 1em 1.25em;
+    border-bottom: 1px solid #0093d0;
+
+    cursor: pointer;
+}
+
+#cardList .cardSelectItem.active {
+    background-color: #0093d0;
+    color: #fff;
+}
+
+#mainContent { 
+    position: absolute;
+    top: 3em;
+    left: 15em;
+    right: 0;
 
 
+    z-index: 10;
+}
 
+.card {
+    margin-bottom: 2em;
+}
+.cardImage {
+    float: left;
 
+    border: 1px solid #d7d7d7;
 
+    margin-right: 2em;
 
-
-
-
-
-
-
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.cardCopy {
+   margin: 2em 4em 1em ;
+}
 
 /* ==========================================================================
    Helper classes
@@ -216,8 +429,112 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 55em) {
     /* Style adjustments for viewports that meet the condition */
+    
+    header { 
+        position: absolute;
+
+    }
+
+    header.active {
+        position: fixed;
+    }
+
+
+    #toggleCardList {
+        display: block;
+        
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        color: #fff;
+        background-color: #0093d0;
+
+        padding: .5em;
+
+        border: 1px solid #0093d0;
+        border-left: 0;
+        border-bottom: 0;
+
+        cursor: pointer;
+
+        z-index: 101;
+
+        -webkit-transition: left 360ms linear;
+        -moz-transition: left 360ms linear;
+        -ms-transition: left 360ms linear;
+        -o-transition: left 360ms linear;
+        transition: left 360ms linear;
+        
+    }
+
+    #toggleCardList span.active {
+        display: none;
+    }
+    #toggleCardList span.notactive {
+        display: inline;
+    }
+
+    #cardListContainer {
+        left: -15em;
+        top: 0;
+
+        z-index: 101;
+        
+        border-right: 1px solid #0093d0;
+
+        -webkit-transition: left 350ms linear;
+        -moz-transition: left 350ms linear;
+        -ms-transition: left 350ms linear;
+        -o-transition: left 350ms linear;
+        transition: left 350ms linear;
+    }
+    #mainContent {
+        left: 0; 
+    }
+
+    .cardImage {
+        height: auto;
+        width: 100%;
+        float: none;
+        margin: 0;
+    }
+
+    body.active #toggleCardList {
+        left: 15em;
+
+        background-color: #fff;
+        color: #0093d0;
+    }
+
+    body.active #toggleCardList span.active {
+        display: inline;
+    }
+    body.active #toggleCardList span.notactive {
+        display: none;
+    }
+
+
+    body.active #cardListContainer {
+        left: 0;
+    }
+  
+}
+@media only screen and (max-width: 30em) { 
+    .cardCopy {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    #cardNavArrows {
+        display: none;
+    }
+
+    #cardListContainer {
+
+    }
 }
 
 @media print,
